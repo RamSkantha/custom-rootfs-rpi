@@ -22,6 +22,7 @@ This project demonstrates how to build and boot a minimal custom root filesystem
 - [Init Script](#init-script)
 - [Learnings](#learnings)
 - [Next Steps](#next-steps)
+- [Project Status](#project-status)
 
 ---
 
@@ -40,7 +41,8 @@ The rootfs is built using BusyBox (cross-compiled for ARM64) and booted via U-Bo
 
 
 
-🛠️ Project Status
+## 🛠️ Project Status
+
 This repository is an active work-in-progress. I’m building the root filesystem step-by-step over several days and updating the README and commits accordingly.
 
 ✅ Completed so far:
