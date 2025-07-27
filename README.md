@@ -22,7 +22,7 @@ This project demonstrates how to build and boot a minimal custom root filesystem
 - [Init Script](#init-script)
 - [Learnings](#learnings)
 - [Next Steps](#next-steps)
-- [Project Status](#project-status)
+- [Project Status](#-project-status)
 
 ---
 
