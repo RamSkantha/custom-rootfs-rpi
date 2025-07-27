@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "RootFS boot initialized"
+exec /bin/sh
