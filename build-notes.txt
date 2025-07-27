@@ -1,0 +1,68 @@
+# 🛠️ Build Notes – Custom RootFS for Raspberry Pi 4
+
+## 🧰 Environment Setup
+
+- Host OS: Ubuntu (x86_64)
+- Target: ARM64 (Raspberry Pi 4 Model B)
+- Toolchain installed:
+  ```bash
+  sudo apt install gcc-aarch64-linux-gnu
+  ```
+
+## 📦 BusyBox Build
+
+- BusyBox version: 1.36.1
+- Downloaded using:
+  ```bash
+  wget https://busybox.net/downloads/busybox-1.36.1.tar.bz2
+  ```
+- Extracted and built with:
+  ```bash
+  tar -xjf busybox-1.36.1.tar.bz2
+  cd busybox-1.36.1
+  make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- defconfig
+  make -j$(nproc) ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
+  make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- CONFIG_PREFIX=../rootfs install
+  ```
+
+## 📁 RootFS Layout (Post-Install)
+
+Manually created additional directories:
+```
+rootfs/
+├── bin/        ← Installed by BusyBox
+├── sbin/       ← Installed by BusyBox
+├── etc/
+├── dev/
+├── proc/
+├── sys/
+├── tmp/
+└── init        ← Custom init script
+```
+
+## 📜 Init Script Created
+
+```sh
+#!/bin/sh
+echo "Welcome to Custom RootFS"
+exec /bin/sh
+```
+
+Made executable with:
+```bash
+chmod +x rootfs/init
+```
+
+## 🧹 Cleanup
+
+- Added `.gitignore` to exclude:
+  - busybox-1.36.1/
+  - busybox-1.36.1.tar.bz2
+  - rootfs/bin/, rootfs/sbin/
+  - images/*.ext4
+
+## 🧾 Notes
+
+- BusyBox was cross-compiled correctly for ARM64 (verified by file type and RPi compatibility)
+- RootFS is now ready for image generation (ext4) and boot testing with U-Boot
+
