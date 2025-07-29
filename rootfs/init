@@ -1,7 +1,4 @@
 #!/bin/sh
-mount -t proc none /proc
-mount -t sysfs none /sys
-mount -t devtmpfs none /dev
-echo "RootFS boot initialized"
-ps -p $$   # show current process name
+echo "Welcome to Custom RootFS"
 exec /bin/sh
+
