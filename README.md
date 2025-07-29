@@ -53,8 +53,8 @@
 	```bash
 	sudo mount -o loop images/rootfs.ext4 /mnt
 	sudo cp -a rootfs/* /mnt
-        sudo umount /mnt
- [Added an automation script](create_rootfs.sh)
+			    sudo umount /mnt
+			    [Added an automation script](create_rootfs.sh)
 
 ## Linux kernel
 
@@ -124,28 +124,28 @@ This allows the root user to log in without a password.
 ⚙️ 2. Set Up Serial Login via getty
 In your custom init script (/init), replace or append the following line to launch getty on UART:
 
-exec /sbin/getty -L ttyS0 115200 vt100
-This enables the serial login prompt on ttyS0 at 115200 baud rate.
+	exec /sbin/getty -L ttyS0 115200 vt100
+	This enables the serial login prompt on ttyS0 at 115200 baud rate.
 
-💻 3. Connect via Serial Terminal
-Insert the SD card into your Raspberry Pi and connect to the board using:
+	💻 3. Connect via Serial Terminal
+	Insert the SD card into your Raspberry Pi and connect to the board using:
 
-sudo screen /dev/ttyACM0 115200
-You should now see a login prompt like this:
+	sudo screen /dev/ttyACM0 115200
+	You should now see a login prompt like this:
 
-[login-screen](screeshots/login-screen.png)
+[login-screen](screenshots/login-screen.png)
 
 ## 🛠️ Project Status
 
-This repository is an active work-in-progress. I’m building the root filesystem step-by-step over several days and updating the README and commits accordingly.
+	This repository is an active work-in-progress. I’m building the root filesystem step-by-step over several days and updating the README and commits accordingly.
 
-✅ Completed so far:
+	✅ Completed so far:
 
-			  * BusyBox cross-compilation for ARM64
+	* BusyBox cross-compilation for ARM64
 
-			  * Base rootfs layout with init script
+	* Base rootfs layout with init script
 
-			  * ext4 image generation
+	* ext4 image generation
 
 	* U-Boot boot script and integration
 
