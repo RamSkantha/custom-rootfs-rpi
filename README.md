@@ -111,6 +111,30 @@ Files copied using dd and parted
 
 📄[See sdcard_setup.md for detailed instructions](sdcard_setup.md)
 
+
+## 🐧 Boot Setup and Serial Login
+To enable root login via the serial console without a password:
+
+🔐 1. Configure /etc/passwd
+Ensure the following line is added to your rootfs’s /etc/passwd:
+
+root::0:0:root:/root:/bin/sh
+This allows the root user to log in without a password.
+
+⚙️ 2. Set Up Serial Login via getty
+In your custom init script (/init), replace or append the following line to launch getty on UART:
+
+exec /sbin/getty -L ttyS0 115200 vt100
+This enables the serial login prompt on ttyS0 at 115200 baud rate.
+
+💻 3. Connect via Serial Terminal
+Insert the SD card into your Raspberry Pi and connect to the board using:
+
+sudo screen /dev/ttyACM0 115200
+You should now see a login prompt like this:
+
+[login-screen](screeshots/login-screen.png)
+
 ## 🛠️ Project Status
 
 This repository is an active work-in-progress. I’m building the root filesystem step-by-step over several days and updating the README and commits accordingly.
