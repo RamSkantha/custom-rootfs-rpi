@@ -97,10 +97,9 @@ sudo umount /mnt/boot
 
 [Added an automation script](create_image.sh)
 
-Final Steps for Static BusyBox Build
-bash
-Copy
-Edit
+## Final Steps for Static BusyBox Build
+
+
 ## 1️⃣ Go to BusyBox folder
 cd busybox-1.36.1
 
