@@ -97,6 +97,44 @@ sudo umount /mnt/boot
 
 [Added an automation script](create_image.sh)
 
+Final Steps for Static BusyBox Build
+bash
+Copy
+Edit
+## 1️⃣ Go to BusyBox folder
+cd busybox-1.36.1
+
+## 2️⃣ Clean old configs
+make distclean
+
+## 3️⃣ Configure BusyBox
+make menuconfig
+Navigate to Settings → Build Options
+
+Enable:
+
+✅ [*] Build BusyBox as a static binary (no shared libs)
+
+(Optional) Disable Networking Utilities → tc (avoids TCA_CBQ_MAX error).
+
+Save and exit.
+
+## 4️⃣ Build BusyBox
+make CROSS_COMPILE=aarch64-linux-gnu- -j$(nproc)
+
+## 5️⃣ Copy BusyBox to rootfs
+sudo cp busybox_unstripped /media/ram/564593b5-24e7-44d4-bc70-defb896fc9b2/bin/busybox
+sudo chmod +x /media/ram/564593b5-24e7-44d4-bc70-defb896fc9b2/bin/busybox
+
+## 6️⃣ Create shell symlink
+sudo ln -sf busybox /media/ram/564593b5-24e7-44d4-bc70-defb896fc9b2/bin/sh
+✅ Verify
+
+file busybox_unstripped
+Output should include:
+
+statically linked
+
 ## 💿 SD Card Setup
 
 To flash boot.img and rootfs.ext4 into an SD card:
@@ -131,6 +169,11 @@ In your custom init script (/init), replace or append the following line to laun
 	Insert the SD card into your Raspberry Pi and connect to the board using:
 
 	sudo screen /dev/ttyACM0 115200
+
+	You should see the init started message which confirms init started from your custom init file
+
+[init-started](screenshots/init-started.png)
+
 	You should now see a login prompt like this:
 
 [login-screen](screenshots/login-screen.png)
@@ -149,8 +192,9 @@ In your custom init script (/init), replace or append the following line to laun
 
 	* U-Boot boot script and integration
 
-	🔜 Coming Next:
-
 	* UART-based boot testing and logging
+	
+🔜 Coming Next:
+
 
 
