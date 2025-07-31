@@ -24,7 +24,7 @@
 - [Final Steps for Static BusyBox Build](#final-steps-for-static-busybox-build)
 - [SD Card Setup](#-sd-card-setup)
 - [Boot Setup and Serial Login](#-boot-setup-and-serial-login)
-- [Project Status](#-project-status)
+- [Project Status](#project-status)
 
 
 ## 📌 Overview
@@ -186,8 +186,6 @@ Achievements:
 ✔️ Base rootfs layout with custom init script
 
 ✔️ ext4 image generation
-
-✔️ U-Boot boot script integration
 
 ✔️ UART-based boot testing and successful root login
 
