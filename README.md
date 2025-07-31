@@ -24,7 +24,7 @@
 - [Final Steps for Static BusyBox Build](#final-steps-for-static-busybox-build)
 - [SD Card Setup](#-sd-card-setup)
 - [Boot Setup and Serial Login](#-boot-setup-and-serial-login)
-- [Project Status](#project-status)
+- [Project Status](#-project-status)
 
 
 ## 📌 Overview
