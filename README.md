@@ -15,17 +15,17 @@
 
 ## 📑 Table of Contents
 
-	- [Overview](#overview)
-	- [Project Structure](#project-structure)
-	- [Features](#features)
-	- [Build Instructions](#build-instructions)
-	- [RootFS Layout](#rootfs-layout)
-	- [Init Script](#init-script)
-	- [Learnings](#learnings)
-	- [Next Steps](#next-steps)
-- [Project Status](#project-status)
+- [Overview](#overview)
+- [Project Info](#project-info)
+- [Project Structure](#project-structure)
+- [Created ext4 Root Filesystem Image](#-created-ext4-root-filesystem-image)
+- [Linux Kernel](#-linux-kernel)
+- [Created Boot Filesystem Image](#-created-boot-filesystem-image)
+- [Final Steps for Static BusyBox Build](#-final-steps-for-static-busybox-build)
+- [SD Card Setup](#-sd-card-setup)
+- [Boot Setup and Serial Login](#-boot-setup-and-serial-login)
+- [Project Status](#-project-status)
 
-	---
 
 ## 📌 Overview
 
@@ -178,22 +178,19 @@ In your custom init script (/init), replace or append the following line to laun
 [login-screen](screenshots/login-screen.png)
 
 ## 🛠️ Project Status
+✅ Project Completed
 
-	This repository is an active work-in-progress. I’m building the root filesystem step-by-step over several days and updating the README and commits accordingly.
+Achievements:
+✔️ BusyBox cross-compilation for ARM64 (static build)
 
-	✅ Completed so far:
+✔️ Base rootfs layout with custom init script
 
-	* BusyBox cross-compilation for ARM64
+✔️ ext4 image generation
 
-	* Base rootfs layout with init script
+✔️ U-Boot boot script integration
 
-	* ext4 image generation
+✔️ UART-based boot testing and successful root login
 
-	* U-Boot boot script and integration
-
-	* UART-based boot testing and logging
-	
-🔜 Coming Next:
 
 
 
