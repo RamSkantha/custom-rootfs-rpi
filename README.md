@@ -15,13 +15,13 @@
 
 ## 📑 Table of Contents
 
-- [Overview](#overview)
-- [Project Info](#project-info)
-- [Project Structure](#project-structure)
+- [Overview](#-overview)
+- [Project Info](#-project-info)
+- [Project Structure](#-project-structure)
 - [Created ext4 Root Filesystem Image](#-created-ext4-root-filesystem-image)
-- [Linux Kernel](#-linux-kernel)
-- [Created Boot Filesystem Image](#-created-boot-filesystem-image)
-- [Final Steps for Static BusyBox Build](#-final-steps-for-static-busybox-build)
+- [Linux Kernel](#linux-kernel)
+- [Created Boot Filesystem Image](#created-boot-filesystem-image)
+- [Final Steps for Static BusyBox Build](#final-steps-for-static-busybox-build)
 - [SD Card Setup](#-sd-card-setup)
 - [Boot Setup and Serial Login](#-boot-setup-and-serial-login)
 - [Project Status](#-project-status)
